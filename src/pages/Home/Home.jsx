@@ -190,7 +190,7 @@ function Home() {
                 On a mission to blend stunning aesthetics with rock-solid engineering.
               </p>
               <div className="mt-6 flex flex-wrap justify-center gap-2">
-                {['React', 'Tailwind', 'TypeScript', 'UI/UX'].map((tech) => (
+                {['JavaScript', 'TypeScript', 'React', 'Tailwind'].map((tech) => (
                   <span
                     key={tech}
                     className="rounded-full border border-secondary/30 bg-secondary/10 px-3 py-1 text-xs font-medium text-secondary"

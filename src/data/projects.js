@@ -15,7 +15,7 @@ const projects = [
     id: 2,
     title: 'Maskan Bank Customer Club',
     icon: '🏠',
-    image: 'Persian_Gulf_Investment_System.png',
+    image: 'Maskan_Bank_Customer_Club.png',
     description:
       'A platform designed to enhance customer engagement and loyalty in housing and investment. As a front-end developer, I built the UI and interactive modules including a personal dashboard, a points & rewards system and an events notification section using Next.js and React.js.',
     tags: ['Next.js', 'React', 'Dashboard'],
@@ -27,7 +27,7 @@ const projects = [
     id: 3,
     title: 'Jahesh Crowd',
     icon: '🚀',
-    image: 'Persian_Gulf_Investment_System.png',
+    image: 'Jahesh_Crowd.png',
     description:
       'A regulated crowdfunding platform, a secure place to invest in manufacturing, industrial, commercial, knowledge-based and tech projects. As a front-end developer, I built the UI and key modules: investment system, processes and secure payment gateway integrations.',
     tags: ['React', 'FinTech', 'API'],
@@ -63,7 +63,7 @@ const projects = [
     id: 6,
     title: 'IShop',
     icon: '🛍️',
-    image: 'Persian_Gulf_Investment_System.png',
+    image: 'IShop.png',
     description:
       'A shopping website with a beautiful UI, fully responsive across all devices for a smooth shopping experience.',
     tags: ['React', 'eCommerce', 'Responsive'],

@@ -9,9 +9,9 @@ const footerLinks = [
 ]
 
 const socials = [
-  { label: 'GitHub', char: '🐙' },
-  { label: 'LinkedIn', char: '💼' },
-  { label: 'Twitter', char: '🐦' },
+  { label: 'GitHub', url: 'https://github.com/MmdQurani', char: '🐙' },
+  { label: 'LinkedIn', url: 'https://www.linkedin.com/in/mohammad-qurani-o7m', char: '💼' },
+  { label: 'Telegram', url: 'https://t.me/mmd_qm_78', char: '📨' },
 ]
 
 function Footer() {
@@ -65,7 +65,9 @@ function Footer() {
             {socials.map((social) => (
               <li key={social.label}>
                 <a
-                  href="#"
+                  href={social.url}
+                  target="_blank"
+                  rel="noreferrer"
                   className="inline-flex items-center gap-2 text-white/70 transition-colors hover:text-secondary"
                 >
                   <span>{social.char}</span>
