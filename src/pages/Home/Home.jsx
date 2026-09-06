@@ -295,7 +295,7 @@ function Home() {
 
           <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
             {featured.map((project, index) => (
-              <Reveal key={project.id} delay={index * 120}>
+              <Reveal key={project.id} delay={index * 120} className="h-full">
                 <ProjectCard project={project} />
               </Reveal>
             ))}
