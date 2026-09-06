@@ -8,6 +8,7 @@ import Reveal from '../../components/Reveal/Reveal'
 import skills from '../../data/skills'
 import projects from '../../data/projects'
 import heroImg from '../../assets/hero.png'
+import myPhoto from '../../assets/My_Photo.jpg'
 
 const experience = [
   {
@@ -175,9 +176,13 @@ function Home() {
           {/* Visual */}
           <Reveal direction="left" className="relative order-2 mx-auto w-full max-w-md lg:order-1">
             <div className="animate-pulse-glow absolute -inset-6 -z-10 rounded-[2rem] bg-secondary/15 blur-2xl" />
-            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-surface via-surface to-secondary/10 p-10 text-center shadow-2xl">
-              <div className="mx-auto flex h-28 w-28 items-center justify-center rounded-3xl bg-gradient-to-br from-secondary to-secondary-dark font-display text-6xl font-black text-primary shadow-[0_0_40px_rgba(203,172,249,0.5)]">
-                M
+            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-surface via-surface to-secondary/10 p-8 text-center shadow-2xl">
+              <div className="relative mx-auto aspect-square w-40 overflow-hidden rounded-2xl border-2 border-secondary/30 shadow-[0_0_35px_rgba(203,172,249,0.35)]">
+                <img
+                  src={myPhoto}
+                  alt="Mohammad"
+                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-110"
+                />
               </div>
               <h3 className="mt-6 font-display text-xl font-bold text-white">Mohammad</h3>
               <p className="mt-1 text-sm text-secondary">Frontend Developer & Designer</p>
