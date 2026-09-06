@@ -19,7 +19,7 @@ function SectionTitle({ eyebrow = null, title, description = null, align = 'cent
         {title}
       </h2>
       {description && (
-        <p className="max-w-2xl leading-relaxed text-muted">{description}</p>
+        <p className="max-w-2xl leading-relaxed text-white/80">{description}</p>
       )}
       <span className="mt-1 h-1 w-16 rounded-full bg-gradient-to-r from-secondary to-secondary-dark" />
     </div>

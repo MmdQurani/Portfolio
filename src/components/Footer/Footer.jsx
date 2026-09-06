@@ -31,7 +31,7 @@ function Footer() {
               Mohammad<span className="text-secondary">.</span>
             </span>
           </Link>
-          <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted">
+          <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/70">
             Crafting modern, fast and beautiful web experiences. Let's turn your ideas into
             something people love.
           </p>
@@ -47,7 +47,7 @@ function Footer() {
               <li key={link.to}>
                 <Link
                   to={link.to}
-                  className="text-muted transition-colors hover:text-secondary"
+                  className="text-white/70 transition-colors hover:text-secondary"
                 >
                   {link.label}
                 </Link>
@@ -66,7 +66,7 @@ function Footer() {
               <li key={social.label}>
                 <a
                   href="#"
-                  className="inline-flex items-center gap-2 text-muted transition-colors hover:text-secondary"
+                  className="inline-flex items-center gap-2 text-white/70 transition-colors hover:text-secondary"
                 >
                   <span>{social.char}</span>
                   {social.label}
@@ -78,7 +78,7 @@ function Footer() {
       </div>
 
       <div className="border-t border-white/5 py-6">
-        <p className="text-center text-xs text-muted">
+        <p className="text-center text-xs text-white/70">
           © {new Date().getFullYear()} Mohammad. Crafted with{' '}
           <span className="text-secondary">♥</span> using React & Tailwind CSS.
         </p>

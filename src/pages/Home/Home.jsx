@@ -4,6 +4,7 @@ import Footer from '../../components/Footer/Footer'
 import Button from '../../components/Button/Button'
 import SectionTitle from '../../components/SectionTitle/SectionTitle'
 import ProjectCard from '../../components/ProjectCard/ProjectCard'
+import Reveal from '../../components/Reveal/Reveal'
 import skills from '../../data/skills'
 import projects from '../../data/projects'
 import heroImg from '../../assets/hero.png'
@@ -67,6 +68,11 @@ function Home() {
         <div className="pointer-events-none absolute inset-0 -z-10">
           <div className="animate-pulse-glow absolute -top-32 left-1/2 h-[560px] w-[900px] -translate-x-1/2 rounded-full bg-secondary/20 blur-[160px]" />
           <div className="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-secondary-dark/20 blur-[120px]" />
+          <div className="animate-orb absolute left-8 top-24 h-40 w-40 rounded-full bg-secondary/15 blur-[100px]" />
+          <div
+            className="animate-orb absolute bottom-28 left-1/3 h-56 w-56 rounded-full bg-secondary-dark/15 blur-[120px]"
+            style={{ animationDelay: '3s' }}
+          />
           <div
             className="absolute inset-0 opacity-[0.05]"
             style={{
@@ -83,7 +89,7 @@ function Home() {
 
         <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-2 lg:px-8">
           {/* Text column */}
-          <div className="text-center lg:text-left">
+          <Reveal direction="up" className="text-center lg:text-left">
             <span className="inline-flex items-center gap-2 rounded-full border border-secondary/30 bg-secondary/10 px-4 py-1.5 text-sm font-medium text-secondary">
               <span className="relative flex h-2.5 w-2.5">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-secondary opacity-75" />
@@ -100,7 +106,7 @@ function Home() {
               experiences
             </h1>
 
-            <p className="mx-auto mt-6 max-w-xl leading-relaxed text-muted lg:mx-0">
+            <p className="mx-auto mt-6 max-w-xl leading-relaxed text-white/85 lg:mx-0">
               I'm a front-end developer passionate about crafting fast, accessible and
               beautifully designed digital products that solve real problems and delight users.
             </p>
@@ -122,13 +128,13 @@ function Home() {
                   className="rounded-2xl border border-white/10 bg-surface/60 px-4 py-5 text-center backdrop-blur"
                 >
                   <p className="font-display text-2xl font-bold text-secondary">{stat.value}</p>
-                  <p className="mt-1 text-xs uppercase tracking-wider text-muted">{stat.label}</p>
+                  <p className="mt-1 text-xs uppercase tracking-wider text-white/70">{stat.label}</p>
                 </div>
               ))}
             </div>
-          </div>
+          </Reveal>
           {/* Image column */}
-          <div className="relative mx-auto w-full max-w-sm lg:max-w-md">
+          <Reveal delay={200} direction="up" className="relative mx-auto w-full max-w-sm lg:max-w-md">
             <div className="animate-pulse-glow absolute -inset-6 -z-10 rounded-[2rem] bg-gradient-to-tr from-secondary/30 via-transparent to-secondary-dark/30 blur-2xl" />
             <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-surface p-3 shadow-2xl">
               <div className="relative overflow-hidden rounded-[1.4rem] bg-gradient-to-br from-surface-light to-primary">
@@ -159,7 +165,7 @@ function Home() {
                 <p className="text-sm font-semibold text-white">Tailwind CSS</p>
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -167,7 +173,7 @@ function Home() {
       <section id="about" className="relative py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-2 lg:px-8">
           {/* Visual */}
-          <div className="relative order-2 mx-auto w-full max-w-md lg:order-1">
+          <Reveal direction="left" className="relative order-2 mx-auto w-full max-w-md lg:order-1">
             <div className="animate-pulse-glow absolute -inset-6 -z-10 rounded-[2rem] bg-secondary/15 blur-2xl" />
             <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-surface via-surface to-secondary/10 p-10 text-center shadow-2xl">
               <div className="mx-auto flex h-28 w-28 items-center justify-center rounded-3xl bg-gradient-to-br from-secondary to-secondary-dark font-display text-6xl font-black text-primary shadow-[0_0_40px_rgba(203,172,249,0.5)]">
@@ -175,7 +181,7 @@ function Home() {
               </div>
               <h3 className="mt-6 font-display text-xl font-bold text-white">Mohammad</h3>
               <p className="mt-1 text-sm text-secondary">Frontend Developer & Designer</p>
-              <p className="mx-auto mt-4 max-w-xs text-sm leading-relaxed text-muted">
+              <p className="mx-auto mt-4 max-w-xs text-sm leading-relaxed text-white/75">
                 On a mission to blend stunning aesthetics with rock-solid engineering.
               </p>
               <div className="mt-6 flex flex-wrap justify-center gap-2">
@@ -189,16 +195,16 @@ function Home() {
                 ))}
               </div>
             </div>
-          </div>
+          </Reveal>
 
           {/* Text */}
-          <div className="order-1 lg:order-2">
+          <Reveal direction="right" className="order-1 lg:order-2">
             <SectionTitle
               align="left"
               eyebrow="About Me"
               title="Turning ideas into digital reality"
             />
-            <p className="leading-relaxed text-muted">
+            <p className="leading-relaxed text-white/85">
               I'm a passionate developer who loves turning complex problems into simple, elegant
               and intuitive user experiences. With a strong eye for design and a focus on clean
               code, I build products that are not only great to look at but also a joy to use.
@@ -219,7 +225,7 @@ function Home() {
                 <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
               </Button>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -237,11 +243,11 @@ function Home() {
           />
 
           <div className="grid gap-7 md:grid-cols-3">
-            {skills.map((category) => (
-              <div
-                key={category.category}
-                className="rounded-2xl border border-white/10 bg-surface p-7 transition-all duration-300 hover:-translate-y-2 hover:border-secondary/40 hover:shadow-[0_25px_70px_-25px_rgba(203,172,249,0.4)]"
-              >
+            {skills.map((category, index) => (
+              <Reveal key={category.category} delay={index * 120}>
+                <div
+                  className="h-full rounded-2xl border border-white/10 bg-surface p-7 transition-all duration-300 hover:-translate-y-2 hover:border-secondary/40 hover:shadow-[0_25px_70px_-25px_rgba(203,172,249,0.4)]"
+                >
                 <div className="mb-6 flex items-center gap-3">
                   <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/15 text-2xl">
                     {category.icon}
@@ -267,6 +273,7 @@ function Home() {
                   ))}
                 </div>
               </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -282,8 +289,10 @@ function Home() {
           />
 
           <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
-            {featured.map((project) => (
-              <ProjectCard key={project.id} project={project} />
+            {featured.map((project, index) => (
+              <Reveal key={project.id} delay={index * 120}>
+                <ProjectCard project={project} />
+              </Reveal>
             ))}
           </div>
 
@@ -297,8 +306,16 @@ function Home() {
       </section>
 
       {/* ===================== EXPERIENCE ===================== */}
-      <section id="experience" className="relative py-24">
-        <div className="mx-auto max-w-4xl px-6 lg:px-8">
+      <section id="experience" className="relative overflow-hidden py-24">
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          <div className="animate-orb absolute left-1/3 top-10 h-80 w-80 rounded-full bg-secondary/10 blur-[140px]" />
+          <div
+            className="animate-orb absolute bottom-10 right-1/4 h-64 w-64 rounded-full bg-secondary-dark/15 blur-[120px]"
+            style={{ animationDelay: '4s' }}
+          />
+        </div>
+
+        <div className="mx-auto max-w-5xl px-6 lg:px-8">
           <SectionTitle
             eyebrow="Experience"
             title="My professional journey"
@@ -306,34 +323,60 @@ function Home() {
           />
 
           <div className="relative">
-            <div className="absolute left-5 top-2 h-full w-px bg-gradient-to-b from-secondary via-secondary/50 to-transparent md:left-1/2 md:-translate-x-1/2" />
+            {/* central gradient timeline */}
+            <span className="absolute left-6 top-2 h-full w-px bg-gradient-to-b from-secondary/0 via-secondary/80 to-secondary/0 md:left-1/2 md:-translate-x-1/2" />
 
             <div className="space-y-10">
-              {experience.map((item) => (
-                <div key={item.role} className="relative md:flex md:items-center md:gap-12">
-                  <div className="absolute left-5 top-6 z-10 -translate-x-1/2 md:left-1/2">
-                    <span className="flex h-4 w-4 rounded-full border-2 border-secondary bg-primary shadow-[0_0_15px_rgba(203,172,249,0.7)]" />
+              {experience.map((item, i) => (
+                <div key={item.role} className="relative md:grid md:grid-cols-2 md:items-center md:gap-12">
+                  {/* node badge */}
+                  <div className="absolute left-6 top-8 z-10 -translate-x-1/2 md:left-1/2">
+                    <span className="flex h-5 w-5 items-center justify-center rounded-full border-2 border-secondary bg-primary shadow-[0_0_0_5px_rgba(203,172,249,0.15),0_0_20px_rgba(203,172,249,0.6)]">
+                      <span className="h-2 w-2 rounded-full bg-secondary" />
+                    </span>
                   </div>
 
-                  <div className="ml-14 md:m-0 md:w-1/2">
-                    <div className="rounded-2xl border border-white/10 bg-surface p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-secondary/40 hover:shadow-[0_20px_50px_-25px_rgba(203,172,249,0.4)]">
-                      <div className="flex items-center gap-2 text-xs uppercase tracking-wider text-secondary">
-                        <span className="text-lg">{item.icon}</span>
-                        <span>{item.company}</span>
-                      </div>
-                      <h3 className="mt-2 font-display text-lg font-semibold text-white">
-                        {item.role}
-                      </h3>
-                      <p className="mt-0.5 text-sm text-muted">{item.period}</p>
-                      <ul className="mt-4 space-y-2 text-sm leading-relaxed text-white/75">
-                        {item.points.map((point) => (
-                          <li key={point} className="flex gap-2">
-                            <span className="mt-2 h-1 w-1 flex-none rounded-full bg-secondary" />
-                            {point}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                  {/* even => left, odd => right */}
+                  <div className={`ml-16 md:ml-auto md:w-auto ${i % 2 === 0 ? 'md:col-start-1 md:pr-2' : 'md:col-start-2 md:pl-2'}`}>
+                    <Reveal direction={i % 2 === 0 ? 'right' : 'left'}>
+                      <article className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur transition-all duration-500 hover:-translate-y-2 hover:border-secondary/50 hover:shadow-[0_25px_60px_-20px_rgba(203,172,249,0.45)] sm:p-7">
+                        {/* left gradient accent */}
+                        <span className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-secondary to-secondary-dark" />
+                        {/* hover glow */}
+                        <span className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-secondary/25 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
+
+                        <div className="flex flex-wrap items-start justify-between gap-4">
+                          <div className="flex items-center gap-3">
+                            <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/15 text-2xl shadow-[0_0_20px_rgba(203,172,249,0.2)] transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110">
+                              {item.icon}
+                            </span>
+                            <div>
+                              <h3 className="font-display text-lg font-semibold text-white">
+                                {item.role}
+                              </h3>
+                              <p className="text-sm font-medium text-secondary">{item.company}</p>
+                            </div>
+                          </div>
+                          <span className="rounded-full border border-secondary/30 bg-secondary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-secondary">
+                            {item.period}
+                          </span>
+                        </div>
+
+                        <ul className="mt-5 space-y-2.5">
+                          {item.points.map((point, j) => (
+                            <li
+                              key={point}
+                              className="flex items-start gap-3 rounded-xl border border-white/5 bg-white/[0.02] p-3 text-sm leading-relaxed text-white/85 transition-all duration-300 hover:border-secondary/30 hover:bg-white/[0.04]"
+                            >
+                              <span className="mt-0.5 flex h-5 w-5 flex-none items-center justify-center rounded-full bg-secondary/15 text-[10px] font-bold text-secondary">
+                                {j + 1}
+                              </span>
+                              {point}
+                            </li>
+                          ))}
+                        </ul>
+                      </article>
+                    </Reveal>
                   </div>
                 </div>
               ))}
@@ -348,7 +391,7 @@ function Home() {
           <div className="pointer-events-none absolute -top-20 left-1/2 h-64 w-[600px] -translate-x-1/2 rounded-full bg-secondary/25 blur-[120px]" />
           <div className="pointer-events-none absolute -bottom-24 -right-16 h-56 w-56 rounded-full bg-secondary-dark/20 blur-[100px]" />
 
-          <div className="relative">
+          <Reveal direction="zoom" className="relative">
             <span className="inline-block rounded-full border border-secondary/30 bg-secondary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-secondary">
               Let's Collaborate
             </span>
@@ -359,7 +402,7 @@ function Home() {
               </span>{' '}
               together
             </h2>
-            <p className="mx-auto mt-5 max-w-xl leading-relaxed text-muted">
+            <p className="mx-auto mt-5 max-w-xl leading-relaxed text-white/80">
               Whether it's a full product, a website redesign or just a friendly chat — I'd love
               to hear about your project.
             </p>
@@ -369,7 +412,7 @@ function Home() {
                 Download Resume
               </Button>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 

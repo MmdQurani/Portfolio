@@ -20,7 +20,7 @@ function ProjectCard({ project }) {
       <h3 className="font-display text-lg font-semibold text-white transition-colors group-hover:text-secondary">
         {project.title}
       </h3>
-      <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{project.description}</p>
+      <p className="mt-2 flex-1 text-sm leading-relaxed text-white/80">{project.description}</p>
 
       {/* Tags */}
       <div className="mt-4 flex flex-wrap gap-2">
