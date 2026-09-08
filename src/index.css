@@ -142,3 +142,58 @@ body {
 .animate-spin-slow {
   animation: spin-slow 14s linear infinite;
 }
+
+/* ---- Ambient background orbs (slow, dreamy drift) ---- */
+@keyframes bg-drift-1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(70px, -50px) scale(1.2);
+  }
+  66% {
+    transform: translate(-40px, 30px) scale(0.9);
+  }
+}
+@keyframes bg-drift-2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(-80px, 40px) scale(1.15);
+  }
+  66% {
+    transform: translate(50px, -30px) scale(0.85);
+  }
+}
+@keyframes bg-drift-3 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(40px, 60px) scale(1.25);
+  }
+}
+
+.bg-orb-1 {
+  animation: bg-drift-1 22s ease-in-out infinite;
+}
+.bg-orb-2 {
+  animation: bg-drift-2 26s ease-in-out infinite;
+}
+.bg-orb-3 {
+  animation: bg-drift-3 18s ease-in-out infinite;
+}
+
+/* Soft breathing pulse for the biggest glow */
+@keyframes bg-breathe {
+  0%, 100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+.bg-breathe {
+  animation: bg-breathe 9s ease-in-out infinite;
+}
