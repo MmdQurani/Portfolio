@@ -9,6 +9,7 @@ import skills from '../../data/skills'
 import projects from '../../data/projects'
 import heroImg from '../../assets/hero.png'
 import myPhoto from '../../assets/My_Photo.jpg'
+import SkillsSection from '../../components/SkillsSection/SkillsSection'
 
 const experience = [
   {
@@ -235,54 +236,13 @@ function Home() {
       </section>
 
       {/* ===================== SKILLS ===================== */}
-      <section id="skills" className="relative py-24">
-        <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-          <div className="absolute left-1/2 top-0 h-96 w-[700px] -translate-x-1/2 rounded-full bg-secondary/10 blur-[140px]" />
-        </div>
-
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <SectionTitle
-            eyebrow="My Skills"
-            title="Tools & technologies I work with"
-            description="A blend of front-end craftsmanship and design thinking that helps me ship polished, high-quality products."
-          />
-
-          <div className="grid gap-7 md:grid-cols-3">
-            {skills.map((category, index) => (
-              <Reveal key={category.category} delay={index * 120}>
-                <div
-                  className="h-full rounded-2xl border border-white/10 bg-surface p-7 transition-all duration-300 hover:-translate-y-2 hover:border-secondary/40 hover:shadow-[0_25px_70px_-25px_rgba(203,172,249,0.4)]"
-                >
-                <div className="mb-6 flex items-center gap-3">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/15 text-2xl">
-                    {category.icon}
-                  </span>
-                  <h3 className="font-display text-lg font-semibold text-white">
-                    {category.category}
-                  </h3>
-                </div>
-                <div className="space-y-5">
-                  {category.items.map((skill) => (
-                    <div key={skill.name}>
-                      <div className="mb-2 flex items-center justify-between text-sm">
-                        <span className="font-medium text-white/85">{skill.name}</span>
-                        <span className="text-secondary">{skill.level}%</span>
-                      </div>
-                      <div className="h-1.5 overflow-hidden rounded-full bg-white/10">
-                        <div
-                          className="h-full rounded-full bg-gradient-to-r from-secondary to-secondary-dark transition-all duration-700"
-                          style={{ width: `${skill.level}%` }}
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <SkillsSection
+        className="py-24"
+        glow
+        eyebrow="My Skills"
+        title="Tools & technologies I work with"
+        description="A blend of front-end craftsmanship and design thinking that helps me ship polished, high-quality products."
+      />
 
       {/* ===================== FEATURED PROJECTS ===================== */}
       <section id="projects" className="relative py-24">
