@@ -1,4 +1,5 @@
 import React from 'react'
+import Tilt from '../Tilt/Tilt'
 
 // Lazy-load all project photos from the Project_Photos folder.
 // The card uses project.image (file name) to pick the matching photo.
@@ -11,7 +12,8 @@ function ProjectCard({ project }) {
   const photo = project.image ? projectImages[`/src/assets/Project_Photos/${project.image}`] : null
 
   return (
-    <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-surface p-6 transition-all duration-300 hover:-translate-y-2 hover:border-secondary/50 hover:shadow-[0_25px_70px_-20px_rgba(203,172,249,0.35)]">
+    <Tilt max={7} scale={1.01} className="h-full">
+      <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-surface p-6 transition-all duration-300 hover:border-secondary/50 hover:shadow-[0_25px_70px_-20px_rgba(203,172,249,0.35)]">
       {/* Top glow on hover */}
       <div className="pointer-events-none absolute -top-24 left-1/2 h-40 w-40 -translate-x-1/2 rounded-full bg-secondary/20 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
 
@@ -67,6 +69,7 @@ function ProjectCard({ project }) {
         )}
       </div>
     </div>
+    </Tilt>
   )
 }
 

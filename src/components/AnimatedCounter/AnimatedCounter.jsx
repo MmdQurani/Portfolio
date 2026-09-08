@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 /**
  * AnimatedCounter – counts from 0 up to `end` when scrolled into view.

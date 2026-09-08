@@ -1,12 +1,18 @@
 import './App.css'
 import { useRoutes } from 'react-router-dom'
 import routes from './routes/routes'
+import CursorGlow from './components/CursorGlow/CursorGlow'
+import ScrollProgressBar from './components/ScrollProgressBar/ScrollProgressBar'
 
 function App() {
   const routeValue = useRoutes(routes)
 
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-primary text-secondary">
+      <ScrollProgressBar />
+      {/* ===== Cursor-follow glow (desktop) ===== */}
+      <CursorGlow />
+
       {/* ===== Global ambient background (fixed, behind every page) ===== */}
       <div className="pointer-events-none fixed inset-0 -z-10">
         {/* Deep base radial gradient */}

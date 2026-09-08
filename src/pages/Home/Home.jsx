@@ -9,6 +9,9 @@ import projects from '../../data/projects'
 import heroImg from '../../assets/hero.png'
 import myPhoto from '../../assets/My_Photo.jpg'
 import SkillsSection from '../../components/SkillsSection/SkillsSection'
+import AnimatedCounter from '../../components/AnimatedCounter/AnimatedCounter'
+import Tilt from '../../components/Tilt/Tilt'
+import Marquee from '../../components/Marquee/Marquee'
 
 const experience = [
   {
@@ -36,9 +39,9 @@ const experience = [
 ]
 
 const stats = [
-  { value: `${projects.length}+`, label: 'Projects Built' },
-  { value: '3+', label: 'Years Experience' },
-  { value: '100%', label: 'Dedication' },
+  { value: projects.length, suffix: '+', label: 'Projects Built' },
+  { value: 3, suffix: '+', label: 'Years Experience' },
+  { value: 100, suffix: '%', label: 'Dedication' },
 ]
 
 const aboutHighlights = [
@@ -91,7 +94,7 @@ function Home() {
 
             <h1 className="mt-6 font-display text-4xl font-bold leading-[1.1] sm:text-5xl xl:text-6xl">
               Hi, I'm Mohammad — I build{' '}
-              <span className="bg-gradient-to-r from-secondary via-secondary-light to-secondary bg-clip-text text-transparent">
+              <span className="text-shimmer bg-gradient-to-r from-secondary via-secondary-light to-secondary bg-clip-text text-transparent">
                 modern web
               </span>{' '}
               experiences
@@ -118,7 +121,9 @@ function Home() {
                   key={stat.label}
                   className="rounded-2xl border border-white/10 bg-surface/60 px-4 py-5 text-center backdrop-blur"
                 >
-                  <p className="font-display text-2xl font-bold text-secondary">{stat.value}</p>
+                  <p className="font-display text-2xl font-bold text-secondary">
+                    <AnimatedCounter end={stat.value} suffix={stat.suffix} />
+                  </p>
                   <p className="mt-1 text-xs uppercase tracking-wider text-white/70">{stat.label}</p>
                 </div>
               ))}
@@ -126,16 +131,18 @@ function Home() {
           </Reveal>
           {/* Image column */}
           <Reveal delay={200} direction="up" className="relative mx-auto w-full max-w-sm lg:max-w-md">
-            <div className="animate-pulse-glow absolute -inset-6 -z-10 rounded-[2rem] bg-gradient-to-tr from-secondary/30 via-transparent to-secondary-dark/30 blur-2xl" />
-            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-surface p-3 shadow-2xl">
-              <div className="relative overflow-hidden rounded-[1.4rem] bg-gradient-to-br from-surface-light to-primary">
-                <img
-                  src={heroImg}
-                  alt="Mohammad — Frontend Developer"
-                  className="mx-auto h-auto w-full object-contain drop-shadow-2xl"
-                />
+            <Tilt max={8} className="relative">
+              <div className="animate-pulse-glow absolute -inset-6 -z-10 rounded-[2rem] bg-gradient-to-tr from-secondary/30 via-transparent to-secondary-dark/30 blur-2xl" />
+              <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-surface p-3 shadow-2xl">
+                <div className="relative overflow-hidden rounded-[1.4rem] bg-gradient-to-br from-surface-light to-primary">
+                  <img
+                    src={heroImg}
+                    alt="Mohammad — Frontend Developer"
+                    className="mx-auto h-auto w-full object-contain drop-shadow-2xl"
+                  />
+                </div>
               </div>
-            </div>
+            </Tilt>
 
             <div className="animate-float absolute -left-3 top-10 hidden items-center gap-2 rounded-2xl border border-white/10 bg-surface/80 px-4 py-3 shadow-xl backdrop-blur sm:flex">
               <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-secondary/15 text-lg">
@@ -159,6 +166,25 @@ function Home() {
           </Reveal>
         </div>
       </section>
+
+      {/* ===================== TECH MARQUEE ===================== */}
+      <div className="relative -my-4 overflow-hidden border-y border-white/5 bg-surface/30 py-4 backdrop-blur">
+        <Marquee
+          items={[
+            'React',
+            'Next.js',
+            'Redux',
+            'Tailwind CSS',
+            'Bootstrap',
+            'JavaScript',
+            'HTML',
+            'CSS',
+            'Figma',
+            'Git',
+            'GitHub',
+          ]}
+        />
+      </div>
 
       {/* ===================== ABOUT PREVIEW ===================== */}
       <section id="about" className="relative py-24">
