@@ -10,7 +10,6 @@ import heroImg from '../../assets/hero.png'
 import myPhoto from '../../assets/My_Photo.jpg'
 import SkillsSection from '../../components/SkillsSection/SkillsSection'
 import AnimatedCounter from '../../components/AnimatedCounter/AnimatedCounter'
-import Tilt from '../../components/Tilt/Tilt'
 import Marquee from '../../components/Marquee/Marquee'
 
 const experience = [
@@ -131,18 +130,16 @@ function Home() {
           </Reveal>
           {/* Image column */}
           <Reveal delay={200} direction="up" className="relative mx-auto w-full max-w-sm lg:max-w-md">
-            <Tilt max={8} className="relative">
-              <div className="animate-pulse-glow absolute -inset-6 -z-10 rounded-[2rem] bg-gradient-to-tr from-secondary/30 via-transparent to-secondary-dark/30 blur-2xl" />
-              <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-surface p-3 shadow-2xl">
-                <div className="relative overflow-hidden rounded-[1.4rem] bg-gradient-to-br from-surface-light to-primary">
-                  <img
-                    src={heroImg}
-                    alt="Mohammad — Frontend Developer"
-                    className="mx-auto h-auto w-full object-contain drop-shadow-2xl"
-                  />
-                </div>
+            <div className="animate-pulse-glow absolute -inset-6 -z-10 rounded-[2rem] bg-gradient-to-tr from-secondary/30 via-transparent to-secondary-dark/30 blur-2xl" />
+            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-surface p-3 shadow-2xl">
+              <div className="relative overflow-hidden rounded-[1.4rem] bg-gradient-to-br from-surface-light to-primary">
+                <img
+                  src={heroImg}
+                  alt="Mohammad — Frontend Developer"
+                  className="mx-auto h-auto w-full object-contain drop-shadow-2xl"
+                />
               </div>
-            </Tilt>
+            </div>
 
             <div className="animate-float absolute -left-3 top-10 hidden items-center gap-2 rounded-2xl border border-white/10 bg-surface/80 px-4 py-3 shadow-xl backdrop-blur sm:flex">
               <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-secondary/15 text-lg">
