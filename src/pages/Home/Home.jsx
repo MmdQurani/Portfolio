@@ -5,7 +5,6 @@ import Button from '../../components/Button/Button'
 import SectionTitle from '../../components/SectionTitle/SectionTitle'
 import ProjectCard from '../../components/ProjectCard/ProjectCard'
 import Reveal from '../../components/Reveal/Reveal'
-import skills from '../../data/skills'
 import projects from '../../data/projects'
 import heroImg from '../../assets/hero.png'
 import myPhoto from '../../assets/My_Photo.jpg'
@@ -13,35 +12,25 @@ import SkillsSection from '../../components/SkillsSection/SkillsSection'
 
 const experience = [
   {
-    role: 'Senior Frontend Developer',
-    company: 'TechNova Studio',
-    period: '2023 — Present',
-    icon: '💻',
-    points: [
-      'Lead the front-end architecture for a SaaS platform used by 20k+ users.',
-      'Mentored a team of 4 developers and introduced a reusable component library.',
-      'Cut page load time by 40% through code-splitting and performance tuning.',
-    ],
-  },
-  {
     role: 'Frontend Developer',
-    company: 'CreativeLab Agency',
-    period: '2021 — 2023',
-    icon: '🖥️',
+    company: 'Fanapa',
+    period: '2025 — 2026',
+    icon: '💼',
     points: [
-      'Delivered 15+ responsive marketing sites and web apps for global clients.',
-      'Collaborated with designers to translate Figma mockups into pixel-perfect UIs.',
-      'Built accessible, SEO-friendly pages using React and Tailwind CSS.',
+      'Building fast, secure and responsive front-end interfaces for a capital market / investment platform.',
+      'Collaborating closely with design and backend teams to deliver a smooth, user-friendly investor experience.',
+      'Creating reusable components and optimising performance across the product.',
     ],
   },
   {
-    role: 'Junior Web Developer',
-    company: 'Freelance',
-    period: '2019 — 2021',
+    role: 'Freelance Frontend Developer',
+    company: 'Freelancer',
+    period: '2023 — 2024',
     icon: '🚀',
     points: [
-      'Worked with small businesses on landing pages, portfolios and e-commerce stores.',
-      'Gained hands-on experience with JavaScript, APIs and responsive design.',
+      'Delivered a wide range of projects solo — from e-commerce sites and landing pages to admin panels and online academies.',
+      'Worked directly with clients to gather requirements and ship polished, fully responsive interfaces.',
+      'Gained hands-on experience with React.js, JavaScript and modern frontend tooling.',
     ],
   },
 ]
