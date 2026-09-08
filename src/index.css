@@ -197,3 +197,89 @@ body {
 .bg-breathe {
   animation: bg-breathe 9s ease-in-out infinite;
 }
+
+/* ---- Motion easing helpers (trendy) ---- */
+.ease-smooth {
+  transition: all 700ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.ease-snap {
+  transition: all 500ms cubic-bezier(0.87, 0, 0.68, 1);
+}
+
+/* ---- 3D tilt on hover (transformed via JS) ---- */
+.tilt-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* ---- Cursor-follow glow (decoration only) ---- */
+.cursor-glow {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 520px;
+  height: 520px;
+  border-radius: 9999px;
+  z-index: 30;
+  mix-blend-mode: screen;
+  background: radial-gradient(
+    circle,
+    rgba(203, 172, 249, 0.10) 0%,
+    rgba(203, 172, 249, 0.05) 30%,
+    transparent 70%
+  );
+  transform: translate(-50%, -50%);
+  will-change: transform;
+  transition: opacity 0.6s ease;
+  opacity: 0;
+}
+.cursor-glow.is-active {
+  opacity: 1;
+}
+
+/* ---- Marquee (scrolling ticker) ---- */
+@keyframes marquee-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-x 30s linear infinite;
+}
+
+/* ---- Gradient shimmer text (animated highlight) ---- */
+@keyframes text-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+.text-shimmer {
+  background-size: 200% 100%;
+  animation: text-shimmer 4s linear infinite;
+}
+
+/* ---- Blur-in keyframe (used by Reveal blur direction) ---- */
+@keyframes blur-in {
+  from {
+    opacity: 0;
+    filter: blur(12px);
+    transform: translateY(24px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+}
+.reveal-blur {
+  animation: blur-in 900ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}

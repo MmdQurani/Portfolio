@@ -2,8 +2,8 @@ import React, { useEffect, useRef, useState } from 'react'
 
 /**
  * Reveal – wraps content and animates it into view when scrolled into the
- * viewport (IntersectionObserver). Supports directional + zoom reveals with
- * staggered delays for a smooth, trendy feel.
+ * viewport (IntersectionObserver). Supports directional + zoom + blur reveals
+ * with staggered delays for a smooth, modern feel.
  */
 function Reveal({
   children,
@@ -40,6 +40,20 @@ function Reveal({
     right: '-translate-x-12',
     zoom: 'scale-90',
     fade: '',
+    blur: '',
+  }
+
+  // Blur uses its own keyframe animation (with filter), so just toggle a class.
+  if (direction === 'blur') {
+    return (
+      <div
+        ref={ref}
+        className={`${className} ${visible ? 'reveal-blur' : 'opacity-0'}`}
+        style={{ transitionDelay: `${delay}ms` }}
+      >
+        {children}
+      </div>
+    )
   }
 
   return (
