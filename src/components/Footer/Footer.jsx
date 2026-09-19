@@ -53,7 +53,7 @@ function Footer() {
       <div className="mx-auto h-px w-full max-w-7xl bg-gradient-to-r from-transparent via-secondary/50 to-transparent" />
 
       {/* ===================== MINI CTA ===================== */}
-      <div className="mx-auto mt-12 max-w-7xl px-6 lg:px-8">
+      {/* <div className="mx-auto mt-12 max-w-7xl px-6 lg:px-8">
         <div className="relative flex flex-col items-center justify-between overflow-hidden rounded-3xl border border-secondary/25 bg-gradient-to-r from-secondary/15 via-surface to-secondary/10 p-8 text-center shadow-2xl sm:flex-row sm:justify-between sm:p-10 sm:text-left">
           <span className="pointer-events-none absolute -right-10 top-0 h-40 w-40 rounded-full bg-secondary/20 blur-2xl" />
           <div>
@@ -70,7 +70,7 @@ function Footer() {
             <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
           </Link>
         </div>
-      </div>
+      </div> */}
 
       {/* ===================== MAIN GRID ===================== */}
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 md:grid-cols-3 lg:grid-cols-4 lg:px-8">
