@@ -8,6 +8,7 @@ import Reveal from '../../components/Reveal/Reveal'
 import projects from '../../data/projects'
 import heroImg from '../../assets/hero.png'
 import myPhoto from '../../assets/My_Photo.jpg'
+import resumeFile from '../../assets/Files/Resume_File_Mohammad_Qurani.pdf'
 import SkillsSection from '../../components/SkillsSection/SkillsSection'
 import AnimatedCounter from '../../components/AnimatedCounter/AnimatedCounter'
 import Tilt from '../../components/Tilt/Tilt'
@@ -388,7 +389,11 @@ function Home() {
             </p>
             <div className="mt-9 flex flex-wrap justify-center gap-4">
               <Button to="/contact">Get In Touch</Button>
-              <Button variant="secondary" href="#">
+              <Button
+                variant="secondary"
+                href={resumeFile}
+                download="Resume_File_Mohammad_Qurani.pdf"
+              >
                 Download Resume
               </Button>
             </div>

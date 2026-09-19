@@ -3,13 +3,17 @@ import { Link } from 'react-router-dom'
 
 /**
  * Reusable styled button that can render as a router <Link>,
- * an external <a>, or a native <button>.
+ * an external <a>, a downloadable file <a>, or a native <button>.
+ *
+ * Pass `download` (optionally with a file name) to make the anchor download
+ * the linked file instead of navigating to it.
  */
 function Button({
   children,
   variant = 'primary',
   to = null,
   href = null,
+  download = null,
   className = '',
   onClick = null,
   type = 'button',
@@ -36,8 +40,18 @@ function Button({
   }
 
   if (href) {
+    // `download` turns the anchor into a file download (no new tab needed).
+    const isDownload = download !== null && download !== false
+
     return (
-      <a href={href} target="_blank" rel="noreferrer" onClick={onClick} className={classes}>
+      <a
+        href={href}
+        download={isDownload ? (download === true ? '' : download) : undefined}
+        target={isDownload ? undefined : '_blank'}
+        rel={isDownload ? undefined : 'noreferrer'}
+        onClick={onClick}
+        className={classes}
+      >
         {children}
       </a>
     )
