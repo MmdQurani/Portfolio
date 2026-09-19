@@ -7,6 +7,11 @@ import skills from '../../data/skills'
 /**
  * SkillsSection – the reusable skills grid (category cards with progress bars).
  * Used on both the Home and About pages.
+ *
+ * Layout: a centered flex-wrap rail instead of a fixed 3-column grid, so the
+ * last row is centered (never a single card hanging on its own) and the cards
+ * stay the exact same size. Every category in `data/skills` holds 4 items, which
+ * keeps all cards at an equal height.
  */
 function SkillsSection({
   eyebrow = 'My Skills',
@@ -27,10 +32,14 @@ function SkillsSection({
       <div className={`mx-auto px-6 lg:px-8 ${description ? 'max-w-7xl' : 'max-w-6xl'}`}>
         <SectionTitle eyebrow={eyebrow} title={title} description={description} align={align} />
 
-        <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="flex flex-wrap justify-center gap-7">
           {skills.map((category, index) => (
-            <Reveal key={category.category} delay={index * 120} className="h-full">
-              <div className="h-full rounded-2xl border border-white/10 bg-surface p-7 transition-all duration-300 hover:-translate-y-2 hover:border-secondary/40 hover:shadow-[0_25px_70px_-25px_rgba(203,172,249,0.4)]">
+            <Reveal
+              key={category.category}
+              delay={index * 120}
+              className="w-full sm:w-[calc(50%_-_0.875rem)] lg:w-[calc(33.3333%_-_1.16667rem)]"
+            >
+              <div className="flex h-full flex-col rounded-2xl border border-white/10 bg-surface p-7 transition-all duration-300 hover:-translate-y-2 hover:border-secondary/40 hover:shadow-[0_25px_70px_-25px_rgba(203,172,249,0.4)]">
                 <div className="mb-6 flex items-center gap-3">
                   <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/15 text-2xl">
                     {category.icon}

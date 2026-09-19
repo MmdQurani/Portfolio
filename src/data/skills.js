@@ -1,3 +1,9 @@
+/**
+ * Skill categories rendered by SkillsSection (Home + About pages).
+ *
+ * NOTE: keep every category at the same number of items (4) so all cards
+ * render at the exact same height and the grid always looks balanced.
+ */
 const skills = [
   {
     category: 'Programming Languages',
@@ -10,13 +16,19 @@ const skills = [
     ],
   },
   {
-    category: 'Frameworks & Libraries',
+    category: 'Frameworks',
     icon: '🛠️',
     items: [
       { name: 'React', level: 95 },
       { name: 'Next', level: 95 },
       { name: 'Redux', level: 90 },
       { name: 'Tailwind CSS', level: 95 },
+    ],
+  },
+  {
+    category: 'Libraries',
+    icon: '📦',
+    items: [
       { name: 'Bootstrap', level: 95 },
       { name: 'Material UI', level: 90 },
       { name: 'React Query', level: 90 },
@@ -25,7 +37,7 @@ const skills = [
   },
   {
     category: 'APIs & State',
-    icon: '🛠️',
+    icon: '🔗',
     items: [
       { name: 'REST APIs', level: 90 },
       { name: 'Axios', level: 90 },
