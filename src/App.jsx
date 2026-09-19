@@ -3,12 +3,15 @@ import { useRoutes } from 'react-router-dom'
 import routes from './routes/routes'
 import CursorGlow from './components/CursorGlow/CursorGlow'
 import ScrollProgressBar from './components/ScrollProgressBar/ScrollProgressBar'
+import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 
 function App() {
   const routeValue = useRoutes(routes)
 
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-primary text-secondary">
+      {/* ===== Always start every page from the top ===== */}
+      <ScrollToTop />
       <ScrollProgressBar />
       {/* ===== Cursor-follow glow (desktop) ===== */}
       <CursorGlow />
