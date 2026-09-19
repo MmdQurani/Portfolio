@@ -16,8 +16,8 @@ const personalInfo = [
     href: "mailto:mmdqurani@gmail.com",
   },
   { label: "Phone", value: "+98 991 722 0842", href: "tel:+989917220842" },
-  { label: "Location", value: "Marand, Tabriz — Iran", href: null },
-  { label: "Date of Birth", value: "February / March 2006", href: null },
+  { label: "Location", value: "Tehran / Tabriz, Iran", href: null },
+  { label: "Date of Birth", value: "February 2006", href: null },
 ];
 
 const languages = [
@@ -90,7 +90,7 @@ function About() {
               </span>
             </h1>
             <p className="mt-2 font-display text-xl font-medium text-secondary">
-              Frontend Developer
+              Frontend Developer | React.js & Next.js
             </p>
             <p className="mt-5 leading-relaxed text-white/85">
               I'm a frontend developer with a passion for React.js. I've been
