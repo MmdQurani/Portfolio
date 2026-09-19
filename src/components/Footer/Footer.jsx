@@ -82,7 +82,7 @@ function Footer() {
               <span className="relative">M</span>
             </span>
             <span>
-              Mohammad<span className="text-secondary">.</span>
+              Mohammad<span className="text-secondary"></span>
             </span>
           </Link>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/70">

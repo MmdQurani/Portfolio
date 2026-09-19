@@ -40,8 +40,8 @@ const experience = [
 ]
 
 const stats = [
-  { value: projects.length, suffix: '+', label: 'Projects Built' },
-  { value: 3, suffix: '+', label: 'Years Experience' },
+  { value: 40, suffix: '+', label: 'Projects Built' },
+  { value: 4, suffix: '+', label: 'Years Experience' },
   { value: 100, suffix: '%', label: 'Dedication' },
 ]
 
@@ -202,12 +202,12 @@ function Home() {
                 />
               </div>
               <h3 className="mt-6 font-display text-xl font-bold text-white">Mohammad</h3>
-              <p className="mt-1 text-sm text-secondary">Frontend Developer & Designer</p>
+              <p className="mt-1 text-sm text-secondary">Frontend Developer | React.js & Next.js</p>
               <p className="mx-auto mt-4 max-w-xs text-sm leading-relaxed text-white/75">
                 On a mission to blend stunning aesthetics with rock-solid engineering.
               </p>
               <div className="mt-6 flex flex-wrap justify-center gap-2">
-                {['JavaScript', 'TypeScript', 'React', 'Tailwind'].map((tech) => (
+                {['JavaScript', 'TypeScript', 'React', 'Next'].map((tech) => (
                   <span
                     key={tech}
                     className="rounded-full border border-secondary/30 bg-secondary/10 px-3 py-1 text-xs font-medium text-secondary"

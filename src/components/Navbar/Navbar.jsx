@@ -47,7 +47,7 @@ function Navbar() {
             <span className="relative">M</span>
           </span>
           <span>
-            Mohammad<span className="text-secondary">.</span>
+            Mohammad<span className="text-secondary"></span>
           </span>
         </Link>
 
