@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import Footer from '../../components/Footer/Footer'
 import SectionTitle from '../../components/SectionTitle/SectionTitle'
 import Reveal from '../../components/Reveal/Reveal'
+
+// Every message sent from the "Send me a message" form goes to this inbox.
+const CONTACT_EMAIL = 'mmdqurani@gmail.com'
 
 const socials = [
   {
@@ -37,8 +40,8 @@ const socials = [
   },
   {
     name: 'Email',
-    handle: 'mmdqurani@gmail.com',
-    url: 'mailto:mmdqurani@gmail.com',
+    handle: CONTACT_EMAIL,
+    url: `mailto:${CONTACT_EMAIL}`,
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -49,6 +52,35 @@ const socials = [
 ]
 
 function Contact() {
+  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
+  const [gmailLink, setGmailLink] = useState(null)
+
+  const handleChange = (event) => {
+    const { name, value } = event.target
+    setForm((previous) => ({ ...previous, [name]: value }))
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+
+    const visitor = form.name.trim() || 'my portfolio'
+    const subject = form.subject.trim() || `New message from ${visitor}`
+    const body = `Name: ${form.name.trim()}\nEmail: ${form.email.trim()}\n\n${form.message.trim()}`
+
+    // Hand the message over to the visitor's mail app, already addressed to my
+    // inbox and prefilled with everything they typed.
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
+      subject,
+    )}&body=${encodeURIComponent(body)}`
+
+    // Fallback for visitors without a desktop mail client: Gmail web compose.
+    setGmailLink(
+      `https://mail.google.com/mail/?view=cm&fs=1&to=${CONTACT_EMAIL}&su=${encodeURIComponent(
+        subject,
+      )}&body=${encodeURIComponent(body)}`,
+    )
+  }
+
   return (
     <div className="relative overflow-x-hidden">
       <Navbar />
@@ -109,10 +141,7 @@ function Contact() {
                 Fill out the form and I'll get back to you as soon as possible.
               </p>
 
-              <form
-                className="relative mt-8 space-y-5"
-                onSubmit={(e) => e.preventDefault()}
-              >
+              <form className="relative mt-8 space-y-5" onSubmit={handleSubmit}>
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div>
                     <label htmlFor="name" className="mb-2 block text-sm font-medium text-white/80">
@@ -120,7 +149,12 @@ function Contact() {
                     </label>
                     <input
                       id="name"
+                      name="name"
                       type="text"
+                      value={form.name}
+                      onChange={handleChange}
+                      autoComplete="name"
+                      required
                       placeholder="Your name"
                       className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder-white/40 outline-none transition-colors focus:border-secondary/60 focus:bg-white/[0.06]"
                     />
@@ -131,7 +165,12 @@ function Contact() {
                     </label>
                     <input
                       id="email"
+                      name="email"
                       type="email"
+                      value={form.email}
+                      onChange={handleChange}
+                      autoComplete="email"
+                      required
                       placeholder="you@example.com"
                       className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder-white/40 outline-none transition-colors focus:border-secondary/60 focus:bg-white/[0.06]"
                     />
@@ -143,7 +182,11 @@ function Contact() {
                   </label>
                   <input
                     id="subject"
+                    name="subject"
                     type="text"
+                    value={form.subject}
+                    onChange={handleChange}
+                    required
                     placeholder="What's this about?"
                     className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder-white/40 outline-none transition-colors focus:border-secondary/60 focus:bg-white/[0.06]"
                   />
@@ -154,7 +197,11 @@ function Contact() {
                   </label>
                   <textarea
                     id="message"
+                    name="message"
                     rows="5"
+                    value={form.message}
+                    onChange={handleChange}
+                    required
                     placeholder="Tell me about your project..."
                     className="w-full resize-none rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder-white/40 outline-none transition-colors focus:border-secondary/60 focus:bg-white/[0.06]"
                   />
@@ -166,6 +213,33 @@ function Contact() {
                   Send Message
                   <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
                 </button>
+
+                {gmailLink && (
+                  <div className="rounded-2xl border border-secondary/40 bg-secondary/10 p-5 text-sm">
+                    <p className="font-medium text-white">
+                      ✅ Your mail app should be opening with your message ready to send.
+                    </p>
+                    <p className="mt-2 leading-relaxed text-white/75">
+                      Nothing happened?{' '}
+                      <a
+                        href={gmailLink}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="font-semibold text-secondary underline decoration-secondary/50 underline-offset-4 transition-colors hover:text-secondary-light"
+                      >
+                        Send it from Gmail
+                      </a>{' '}
+                      or write to me directly at{' '}
+                      <a
+                        href={`mailto:${CONTACT_EMAIL}`}
+                        className="font-semibold text-secondary underline decoration-secondary/50 underline-offset-4 transition-colors hover:text-secondary-light"
+                      >
+                        {CONTACT_EMAIL}
+                      </a>
+                      .
+                    </p>
+                  </div>
+                )}
               </form>
             </div>
           </Reveal>
